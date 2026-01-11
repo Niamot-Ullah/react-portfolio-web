@@ -30,7 +30,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         </p>
         <a 
           href={project.link} 
-          className="inline-flex items-center text-sm font-semibold text-white hover:text-indigo-400 transition-colors"
+           className="
+    inline-flex items-center text-sm font-semibold text-indigo-400
+    opacity-0 translate-y-2
+    group-hover:opacity-100 group-hover:translate-y-0
+    transition-all duration-300 delay-100
+    group-hover:translate-x-1
+  "
         >
           View Project
           <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

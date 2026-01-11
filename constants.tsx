@@ -1,28 +1,32 @@
 
 import { Project, Skill, Education } from './types';
+import img1 from './assets/p1.png'
+import img2 from './assets/p2.png'
+import img3 from './assets/p3.png'
+
 
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "AI Vision Dashboard",
-    description: "A real-time visual analytics platform using computer vision and React.",
-    tags: ["React", "TypeScript", "OpenCV", "Tailwind"],
-    image: "https://picsum.photos/seed/p1/600/400",
-    link: "#"
+    title: "Auto Wheels",
+    description: "A responsive web application designed for Renting Cars where user can post his car for rent as well as book cars from here.",
+    tags: ["React","JavaScript", "Express", "MongoDB"],
+    image: img2,
+    link: "https://ph-assaignment-11-renting-cars.web.app/"
   },
   {
     id: 2,
-    title: "EcoSphere E-commerce",
-    description: "Sustainable marketplace with advanced filtering and carbon footprint tracking.",
-    tags: ["Next.js", "GraphQL", "Node.js"],
-    image: "https://picsum.photos/seed/p2/600/400",
-    link: "#"
+    title: "Job Portal",
+    description: "A modern, responsive web application designed for those who are looking for job or those those need employee.",
+    tags: [ "Tailwind","Firebase", "Node.js", "MongoDB"],
+    image: img1,
+    link: "https://curious-biscuit-e53fe9.netlify.app/"
   },
   {
     id: 3,
     title: "Quantum Ledger",
-    description: "High-performance blockchain explorer with real-time transaction visualization.",
-    tags: ["D3.js", "Solidity", "React"],
+    description: "High-performance  explorer with real-time transaction visualization.",
+    tags: [],
     image: "https://picsum.photos/seed/p3/600/400",
     link: "#"
   }

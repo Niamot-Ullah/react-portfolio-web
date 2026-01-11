@@ -74,21 +74,35 @@ const App: React.FC = () => {
       );
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active'); // enter viewport
+        } else {
+          entry.target.classList.remove('active'); // leave viewport
+        }
+      });
+    },
+    { threshold: 0.1 } // trigger when 10% of element is visible
+  );
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  const elements = document.querySelectorAll<HTMLElement>('.reveal');
+
+  elements.forEach((el, index) => {
+    // add a stagger delay per element (in seconds)
+    const delay = index * 0.1; // 0.1s per element, change as you like
+    el.style.transitionDelay = `${delay}s`;
+    observer.observe(el);
+  });
+
+  return () => observer.disconnect();
+}, []);
+
+
+
+
 
   const handleAiChat = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -111,9 +125,9 @@ const App: React.FC = () => {
     <div className="min-h-screen selection:bg-indigo-500/30 transition-colors duration-500 bg-white dark:bg-dark text-gray-900 dark:text-gray-100">
       <Navbar />
 
-      <main>
+      <main className="">
         {/* Banner / Hero Section */}
-        <section id={Section.Home} className="relative min-h-screen flex items-center pt-20 overflow-hidden mt-2">
+        <section id={Section.Home} className="relative  min-h-screen flex items-center pt-32 pb-4 md:pb-10 overflow-hidden ">
 
           <div className="absolute inset-0 z-0">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 blur-[120px] rounded-full animate-pulse" />
@@ -192,7 +206,7 @@ const App: React.FC = () => {
         </section>
 
         {/* About Section */}
-        <section id={Section.About} className="py-24 relative">
+        <section id={Section.About} className="py-16 md:py-24 relative">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center reveal">
               <h2 className="text-3xl md:text-5xl font-bold mb-8">Passionate about <span className="text-indigo-500">Innovation</span> & Scalability.</h2>
@@ -227,7 +241,7 @@ const App: React.FC = () => {
                   type="text"
                   value={userQuery}
                   onChange={(e) => setUserQuery(e.target.value)}
-                  placeholder="Ask about Alex's skills, experience..."
+                  placeholder="Ask about Neyamat's skills, experience..."
                   className="w-full bg-gray-100 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-full py-4 px-6 pr-16 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all text-sm text-gray-900 dark:text-white"
                 />
                 <button
@@ -243,7 +257,7 @@ const App: React.FC = () => {
               </form>
               {aiMessage && (
                 <div className="p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-700 dark:text-indigo-300 text-sm animate-fade-in text-left">
-                  <span className="font-bold mr-2 text-indigo-500">AI Alex:</span>
+                  <span className="font-bold mr-2 text-indigo-500">AI Neyamat :</span>
                   {aiMessage}
                 </div>
               )}
@@ -268,6 +282,9 @@ const App: React.FC = () => {
           </div>
         </section>
 
+
+
+
         {/* Projects Section */}
         <section id={Section.Projects} className="py-24">
           <div className="container mx-auto px-6">
@@ -282,6 +299,9 @@ const App: React.FC = () => {
             </div>
           </div>
         </section>
+
+
+
 
         {/* Education Section */}
         <section id={Section.Education} className="py-24 bg-gray-50 dark:bg-gray-900/30">

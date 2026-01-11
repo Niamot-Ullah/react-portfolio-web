@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 export const ThemeToggle: React.FC = () => {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const root = window.document.documentElement;

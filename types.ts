@@ -29,3 +29,5 @@ export enum Section {
   Education = 'education',
   Contact = 'contact'
 }
+
+

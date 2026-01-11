@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass-card py-3 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="#" className="text-2xl font-bold tracking-tighter text-gray-900 dark:text-white">
-          NEYAMAT<span className="text-indigo-500">.</span>DEV
+          NEYAMAT<span className="text-indigo-500">.</span>
         </a>
 
         {/* Desktop Menu */}
