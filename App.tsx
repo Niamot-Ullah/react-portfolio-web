@@ -92,7 +92,7 @@ useEffect(() => {
 
   elements.forEach((el, index) => {
     // add a stagger delay per element (in seconds)
-    const delay = index * 0.1; // 0.1s per element, change as you like
+    const delay = index * 0.001; // 0.1s per element, change as you like
     el.style.transitionDelay = `${delay}s`;
     observer.observe(el);
   });
@@ -127,7 +127,7 @@ useEffect(() => {
 
       <main className="">
         {/* Banner / Hero Section */}
-        <section id={Section.Home} className="relative  min-h-screen flex items-center pt-32 pb-4 md:pb-10 overflow-hidden ">
+        <section id={Section.Home} className="relative ml-0 lg:ml-10  min-h-screen flex items-center pt-20 pb-0 md:pb-10 md:pt-36 overflow-hidden ">
 
           <div className="absolute inset-0 z-0">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 blur-[120px] rounded-full animate-pulse" />
@@ -135,15 +135,15 @@ useEffect(() => {
           </div>
 
           <div className="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
-            <div className="reveal order-2 md:order-1">
-              <span className="inline-block py-1 px-3 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold tracking-widest mb-6">
+            <div className="reveal order-2 ml- md:order-1">
+              <span className="inline-block py-1 px-3 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-sm md:text-xs font-bold tracking-widest mb-6">
                 FULL STACK WEB DEVELOPER
               </span>
-              <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
                 <span className="animate-gradient">Neyamat </span>
                 Ullah
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed">
+              <p className="text-md md:text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-lg leading-relaxed">
                 Hello! I'm a FULL Stack Developer from Bangladesh, with a background in Economics from the University of Barishal.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -160,7 +160,7 @@ useEffect(() => {
 
               </div>
             </div>
-
+ {/* img  */}
             <div className="reveal delay-300 order-1 md:order-2 flex justify-center relative">
               <div className="relative w-72 h-72 md:w-96 md:h-96">
 
@@ -311,9 +311,9 @@ useEffect(() => {
                 <h2 className="text-4xl font-bold mb-4">Education.</h2>
                 <p className="text-gray-600 dark:text-gray-400">Academic background that shaped my technical foundation.</p>
               </div>
-              <div className="reveal delay-200">
+              <div className="reveal delay-200 ">
                 {EDUCATION.map((edu, i) => (
-                  <EducationItem key={i} edu={edu} />
+                  <EducationItem className="" key={i} edu={edu} />
                 ))}
               </div>
             </div>

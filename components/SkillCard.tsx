@@ -39,10 +39,13 @@ export const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
   return (
     <div
       ref={cardRef}
-      className="p-6 glass-card rounded-2xl hover:border-indigo-500/50 transition-all group"
-    >
+       className="p-6 glass-card rounded-2xl 
+             transition-all duration-500 
+             hover:-translate-y-2 hover:scale-105 hover:shadow-sm 
+             hover:border-indigo-500 hover:border-1 group cursor-pointer"
+>
       <div className="flex justify-between items-center mb-4">
-        <h3 className="font-semibold text-gray-800 dark:text-gray-100 group-hover:text-indigo-500 transition-colors">
+        <h3 className="font-semibold text-gray-800 dark:text-gray-100 transition-colors">
           {skill.name}
         </h3>
         <span className="text-xs font-bold text-indigo-500 dark:text-indigo-400 px-2 py-1 bg-indigo-500/10 rounded uppercase">

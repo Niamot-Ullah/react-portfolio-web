@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
     id: 1,
     title: "Auto Wheels",
     description: "A responsive web application designed for Renting Cars where user can post his car for rent as well as book cars from here.",
-    tags: ["React","JavaScript", "Express", "MongoDB"],
+    tags: ["React", "JavaScript", "Express", "MongoDB"],
     image: img2,
     link: "https://ph-assaignment-11-renting-cars.web.app/"
   },
@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
     id: 2,
     title: "Job Portal",
     description: "A modern, responsive web application designed for those who are looking for job or those those need employee.",
-    tags: [ "Tailwind","Firebase", "Node.js", "MongoDB"],
+    tags: ["Tailwind", "Firebase", "Node.js", "MongoDB"],
     image: img1,
     link: "https://curious-biscuit-e53fe9.netlify.app/"
   },
@@ -40,24 +40,24 @@ export const SKILLS: Skill[] = [
   { name: "Tailwind CSS", level: 98, category: 'Frontend' },
   { name: "Node.js", level: 88, category: 'Backend' },
   { name: "Express", level: 85, category: 'Backend' },
-  { name: "PostgreSQL", level: 82, category: 'Backend' },
-  { name: "MongoDB", level: 83, category: 'Backend' },
-  { name: "Firebase", level: 85, category: 'Backend' },
+  { name: "PostgreSQL", level: 82, category: 'Database' },
+  { name: "MongoDB", level: 83, category: 'Database' },
+  { name: "Firebase", level: 85, category: 'Tools' },
   { name: "Better Auth", level: 90, category: 'Tools' },
   { name: "Docker", level: 70, category: 'DevOps' }
 ];
 
 export const EDUCATION: Education[] = [
   {
-    degree: "HSC(Higher School Certificate",
+    degree: "HSC(Higher Secondary Certificate",
     institution: "Amrita Lal Dey College, Barishal",
     duration: "2019 - 2021",
-    description: "Learned Basic 'ICT, English, Economics, History'. "
+    description: "Completed my H.S.C(Higher Secondary Certificate) in Humanities. Learned Basic 'ICT, English, Economics, History'. "
   },
   {
     degree: "B.S.S in Economics",
     institution: "University of Barishal",
     duration: "2023 - present",
-    description: "Learning Statistics, Calculus, Econometrics and Advance Economics. "
+    description: "Pursuing B.S.S(Bachelor of Social Science) in Economics. Learning Statistics, Calculus, Econometrics and Advance Economics. "
   }
 ];
